@@ -1,0 +1,27 @@
+{%extends "base.html" %}
+
+{% block content %}
+    <h1>About</h1>
+    <p>This is the about page</p>
+    {#<p>Here is our best worker {{worker_info}}</p>#}
+    {#<p>Here is our worst worker {{worst_worker}}</p>#}
+
+    <h2>Our workers</h2>
+    <!-- table of workers -->
+
+    <table style="border: solid 1px; padding: 5px;">
+        <th>
+             <td>First Name</td>
+             <td>Last Name</td>
+             <td>Profession</td>
+        </th>
+        {% for item in coworkers %}
+            <tr style="border: solid 1px;">
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.profession}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+{% endblock %}

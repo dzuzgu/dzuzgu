@@ -1,0 +1,30 @@
+{%extends "base.html" %}
+
+{% block content %}
+    <h1>Contacts</h1>
+
+    <p>This is the contacts page</p>
+
+    <h2>Our contacts</h2>
+
+    <!-- table of contacts -->
+
+    <table style="border: solid 1px; padding: 5px;">
+
+        <th>
+             <td>First Name</td>
+             <td>Last Name</td>
+             <td>Email</td>
+             <td>Message</td>
+        </th>
+        {% for item in contacts %}
+
+            <tr style="border: solid 1px;">
+                <td>{{item.name}}</td>
+                <td>{{item.surname}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.message}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}
